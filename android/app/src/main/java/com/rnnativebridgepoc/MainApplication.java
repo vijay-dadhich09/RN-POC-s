@@ -9,6 +9,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.rnnativebridgepoc.bulbView.BulbPackage;
 import com.rnnativebridgepoc.videoPlayer.VideoViewPackage;
 
 import java.lang.reflect.InvocationTargetException;
@@ -28,7 +29,8 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
-                    new VideoViewPackage()
+                    new VideoViewPackage(),
+                    new BulbPackage()
             );
 //          @SuppressWarnings("UnnecessaryLocalVariable")
 //          List<ReactPackage> packages = new PackageList(this).getPackages();
