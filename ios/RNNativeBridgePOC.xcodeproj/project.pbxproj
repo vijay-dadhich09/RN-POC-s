@@ -194,7 +194,6 @@
 				0B0D349339273260A63F4114 /* Pods-RNNativeBridgePOC-tvOSTests.debug.xcconfig */,
 				4ED54143E58721C3E120D221 /* Pods-RNNativeBridgePOC-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -287,7 +286,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -610,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EA69235B450F2662AC4F0BE /* Pods-RNNativeBridgePOC-RNNativeBridgePOCTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -633,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBABE794906D77617FC3AC31 /* Pods-RNNativeBridgePOC-RNNativeBridgePOCTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = RNNativeBridgePOCTests/Info.plist;
