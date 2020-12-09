@@ -26,6 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import {SignatureScreen} from './src/components/SignatureScreen';
 import {ModalDialog} from './src/components/ModalDialog';
+import {GeolocationComp} from './src/components/GeolocationComp';
 
 const App: () => React$Node = () => {
   const [showModal, setShowModal] = React.useState(false);
@@ -49,6 +50,7 @@ const App: () => React$Node = () => {
               <Text>Digital Signature</Text>
             </TouchableOpacity>
           </View>
+          <GeolocationComp />
         </ScrollView>
         <ModalDialog showModal={showModal} onCloseModal={onCloseModal}>
           <SignatureScreen />
