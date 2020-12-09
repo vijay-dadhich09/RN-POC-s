@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 // import Geolocation from 'react-native-geolocation-service';
 import Geolocation from '@react-native-community/geolocation';
 
-export const GeolocationComp = () => {
+export const GeolocationComp = ({onGetCurrentCords}) => {
   const [hasLocationPermission, setHasLocationPermission] = useState(true);
   // useEffect(() => {
   //   setModalVisible(showModal);
@@ -15,6 +15,9 @@ export const GeolocationComp = () => {
       Geolocation.getCurrentPosition(
         (position) => {
           console.log('position: ', position);
+          if (onGetCurrentCords && position) {
+            onGetCurrentCords(position.coords);
+          }
         },
         (error) => {
           // See error code charts below.
