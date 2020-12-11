@@ -1,36 +1,30 @@
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps'; //
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 // import Geolocation from 'react-native-geolocation-service';
 import {GeolocationComp} from './GeolocationComp';
 import {MapsComp} from './MapsComp';
+import {DismissKeyboard} from './DismissKeyboard';
 
 export const LocationFinder = () => {
-  const [coords, setCoords] = useState(null);
-  // useEffect(() => {
-  //   setModalVisible(showModal);
-  // }, [showModal]);
+  const [markersData, setMarkersData] = useState(null);
 
-  const onGetCurrentCords = (_coords) => {
-    console.log('coords: ', _coords);
-    setCoords(_coords);
+  const onDrawMarkers = (_markersData) => {
+    setMarkersData(_markersData);
   };
 
   return (
-    <View style={styles.container}>
-      <GeolocationComp onGetCurrentCords={onGetCurrentCords} />
-      <MapsComp coords={coords} />
-    </View>
+    <DismissKeyboard>
+      <View style={styles.container}>
+        <GeolocationComp onDrawMarkers={onDrawMarkers} />
+        <MapsComp markersData={markersData} />
+      </View>
+    </DismissKeyboard>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // ...StyleSheet.absoluteFillObject,
-    // flex: 1,
-    height: 400,
-    // backgroundColor: '#ff0000',
-    borderWidth: 1,
-    borderColor: '#ff0000',
+    marginTop: 10,
+    height: '100%',
   },
 });

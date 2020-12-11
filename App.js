@@ -42,7 +42,7 @@ const App: () => React$Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
+        {/* <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View style={styles.signatureButtonContainer}>
@@ -51,7 +51,8 @@ const App: () => React$Node = () => {
             </TouchableOpacity>
           </View>
           <LocationFinder />
-        </ScrollView>
+        </ScrollView> */}
+        <LocationFinder />
         <ModalDialog showModal={showModal} onCloseModal={onCloseModal}>
           <SignatureScreen />
         </ModalDialog>
@@ -62,8 +63,8 @@ const App: () => React$Node = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    height: '100%',
-    // flex: 1,
+    // ...StyleSheet.absoluteFillObject,
+    flex: 1,
     // backgroundColor: Colors.lighter,
   },
   engine: {
